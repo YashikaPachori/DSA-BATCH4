@@ -1,0 +1,18 @@
+class Solution:
+    def maxSubarraySum(self, arr, k):
+        # code here 
+        i=0
+        j=0
+        sum=0
+        max_sum=0
+        while(j<len(arr)):
+            if (j-i+1 < k):
+                sum=sum+arr[j]
+                j+=1
+            else:
+                sum=sum+arr[j]
+                max_sum=max(sum,max_sum)
+                sum = sum - arr[i]
+                i+=1
+                j+=1
+        return max_sum
