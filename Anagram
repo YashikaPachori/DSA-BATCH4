@@ -1,0 +1,14 @@
+def anagram(s):
+    # Write your code here
+    changes=0
+    if len(s) % 2 !=0:
+        return -1
+    mid=len(s)//2
+    s1,s2=s[:mid],s[mid:]
+    s2=list(s2)
+    for i in s1:
+        if i in s2:
+            s2.remove(i)
+        else:
+            changes+=1
+    return changes
